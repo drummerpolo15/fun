@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """
-Credit Transfer Checker
-Allows students to check if their credits will transfer to another college.
+PHCC Credit Transfer Checker
+Allows Patrick and Henry Community College (PHCC) students to check if their 
+credits will transfer to other colleges and universities.
+Patrick & Henry Community College - Martinsville, VA
 """
 
 import json
@@ -72,52 +74,209 @@ class CreditTransferChecker:
             print(f"Error saving equivalencies: {e}")
     
     def _create_sample_data(self):
-        """Create sample transfer equivalency data."""
+        """Create PHCC transfer equivalency data for common Virginia universities."""
+        phcc = "Patrick & Henry Community College"
+        
         sample_data = [
+            # PHCC to Virginia Tech
             TransferEquivalency(
-                source_college="Community College A",
-                source_course_code="MATH 101",
-                target_college="State University",
-                target_course_code="MATH 110",
-                target_course_name="Calculus I",
+                source_college=phcc,
+                source_course_code="ENG 111",
+                target_college="Virginia Tech",
+                target_course_code="ENGL 1105",
+                target_course_name="First-Year Writing",
                 credits_transferred=3.0,
                 notes="Direct equivalent"
             ),
             TransferEquivalency(
-                source_college="Community College A",
-                source_course_code="ENG 101",
-                target_college="State University",
-                target_course_code="ENGL 101",
+                source_college=phcc,
+                source_course_code="MTH 173",
+                target_college="Virginia Tech",
+                target_course_code="MATH 1225",
+                target_course_name="Calculus of a Single Variable",
+                credits_transferred=4.0,
+                notes="Direct equivalent"
+            ),
+            TransferEquivalency(
+                source_college=phcc,
+                source_course_code="BIO 101",
+                target_college="Virginia Tech",
+                target_course_code="BIOL 1105",
+                target_course_name="Principles of Biology",
+                credits_transferred=4.0,
+                notes="Direct equivalent, includes lab"
+            ),
+            TransferEquivalency(
+                source_college=phcc,
+                source_course_code="CHM 111",
+                target_college="Virginia Tech",
+                target_course_code="CHEM 1035",
+                target_course_name="General Chemistry",
+                credits_transferred=3.0,
+                notes="Direct equivalent"
+            ),
+            TransferEquivalency(
+                source_college=phcc,
+                source_course_code="HIS 121",
+                target_college="Virginia Tech",
+                target_course_code="HIST 1115",
+                target_course_name="United States History",
+                credits_transferred=3.0,
+                notes="Direct equivalent"
+            ),
+            
+            # PHCC to University of Virginia
+            TransferEquivalency(
+                source_college=phcc,
+                source_course_code="ENG 111",
+                target_college="University of Virginia",
+                target_course_code="ENWR 1510",
+                target_course_name="Academic Writing",
+                credits_transferred=3.0,
+                notes="Direct equivalent"
+            ),
+            TransferEquivalency(
+                source_college=phcc,
+                source_course_code="MTH 173",
+                target_college="University of Virginia",
+                target_course_code="MATH 1310",
+                target_course_name="Calculus I",
+                credits_transferred=4.0,
+                notes="Direct equivalent"
+            ),
+            TransferEquivalency(
+                source_college=phcc,
+                source_course_code="BIO 101",
+                target_college="University of Virginia",
+                target_course_code="BIOL 2100",
+                target_course_name="Introduction to Biology",
+                credits_transferred=4.0,
+                notes="Direct equivalent"
+            ),
+            
+            # PHCC to James Madison University
+            TransferEquivalency(
+                source_college=phcc,
+                source_course_code="ENG 111",
+                target_college="James Madison University",
+                target_course_code="WRIT 101",
+                target_course_name="Critical Reading and Writing",
+                credits_transferred=3.0,
+                notes="Direct equivalent"
+            ),
+            TransferEquivalency(
+                source_college=phcc,
+                source_course_code="MTH 173",
+                target_college="James Madison University",
+                target_course_code="MATH 235",
+                target_course_name="Calculus I",
+                credits_transferred=4.0,
+                notes="Direct equivalent"
+            ),
+            TransferEquivalency(
+                source_college=phcc,
+                source_course_code="BIO 101",
+                target_college="James Madison University",
+                target_course_code="BIO 140",
+                target_course_name="Foundations of Biology I",
+                credits_transferred=4.0,
+                notes="Direct equivalent"
+            ),
+            TransferEquivalency(
+                source_college=phcc,
+                source_course_code="PSY 200",
+                target_college="James Madison University",
+                target_course_code="PSYC 101",
+                target_course_name="General Psychology",
+                credits_transferred=3.0,
+                notes="Direct equivalent"
+            ),
+            
+            # PHCC to Radford University
+            TransferEquivalency(
+                source_college=phcc,
+                source_course_code="ENG 111",
+                target_college="Radford University",
+                target_course_code="ENGL 111",
                 target_course_name="Composition I",
                 credits_transferred=3.0,
                 notes="Direct equivalent"
             ),
             TransferEquivalency(
-                source_college="Community College A",
-                source_course_code="HIST 201",
-                target_college="State University",
-                target_course_code="HIST 201",
-                target_course_name="US History I",
-                credits_transferred=3.0,
-                notes="Direct equivalent"
-            ),
-            TransferEquivalency(
-                source_college="Community College B",
-                source_course_code="CS 101",
-                target_college="State University",
-                target_course_code="CS 150",
-                target_course_name="Introduction to Programming",
-                credits_transferred=3.0,
-                notes="Direct equivalent"
-            ),
-            TransferEquivalency(
-                source_college="Community College B",
-                source_course_code="BIO 101",
-                target_college="State University",
-                target_course_code="BIOL 101",
-                target_course_name="General Biology",
+                source_college=phcc,
+                source_course_code="MTH 173",
+                target_college="Radford University",
+                target_course_code="MATH 151",
+                target_course_name="Calculus I",
                 credits_transferred=4.0,
-                notes="Direct equivalent, includes lab"
+                notes="Direct equivalent"
+            ),
+            TransferEquivalency(
+                source_college=phcc,
+                source_course_code="BIO 101",
+                target_college="Radford University",
+                target_course_code="BIOL 131",
+                target_course_name="General Biology I",
+                credits_transferred=4.0,
+                notes="Direct equivalent"
+            ),
+            
+            # PHCC to Virginia Commonwealth University
+            TransferEquivalency(
+                source_college=phcc,
+                source_course_code="ENG 111",
+                target_college="Virginia Commonwealth University",
+                target_course_code="UNIV 111",
+                target_course_name="Focus Inquiry",
+                credits_transferred=3.0,
+                notes="Direct equivalent"
+            ),
+            TransferEquivalency(
+                source_college=phcc,
+                source_course_code="MTH 173",
+                target_college="Virginia Commonwealth University",
+                target_course_code="MATH 200",
+                target_course_name="Calculus with Analytic Geometry I",
+                credits_transferred=4.0,
+                notes="Direct equivalent"
+            ),
+            TransferEquivalency(
+                source_college=phcc,
+                source_course_code="BIO 101",
+                target_college="Virginia Commonwealth University",
+                target_course_code="BIOL 151",
+                target_course_name="Introduction to Biological Sciences I",
+                credits_transferred=4.0,
+                notes="Direct equivalent"
+            ),
+            
+            # PHCC to Old Dominion University
+            TransferEquivalency(
+                source_college=phcc,
+                source_course_code="ENG 111",
+                target_college="Old Dominion University",
+                target_course_code="ENGL 110C",
+                target_course_name="English Composition",
+                credits_transferred=3.0,
+                notes="Direct equivalent"
+            ),
+            TransferEquivalency(
+                source_college=phcc,
+                source_course_code="MTH 173",
+                target_college="Old Dominion University",
+                target_course_code="MATH 211",
+                target_course_name="Calculus I",
+                credits_transferred=4.0,
+                notes="Direct equivalent"
+            ),
+            TransferEquivalency(
+                source_college=phcc,
+                source_course_code="BIO 101",
+                target_college="Old Dominion University",
+                target_course_code="BIOL 110N",
+                target_course_name="Principles of Biology",
+                credits_transferred=4.0,
+                notes="Direct equivalent"
             ),
         ]
         self.equivalencies = sample_data
@@ -156,9 +315,10 @@ class CreditTransferChecker:
 
 def print_header():
     """Print a nice header."""
-    print("\n" + "=" * 60)
-    print(" " * 15 + "CREDIT TRANSFER CHECKER")
-    print("=" * 60 + "\n")
+    print("\n" + "=" * 70)
+    print(" " * 10 + "PHCC CREDIT TRANSFER CHECKER")
+    print(" " * 5 + "Patrick & Henry Community College - Martinsville, VA")
+    print("=" * 70 + "\n")
 
 
 def print_results(results: Dict[str, Tuple[Optional[TransferEquivalency], Course]], target_college: str):
@@ -218,11 +378,13 @@ def get_course_input() -> Course:
 def interactive_mode():
     """Run the interactive CLI mode."""
     checker = CreditTransferChecker()
+    phcc = "Patrick & Henry Community College"
     
     print_header()
-    print("Welcome! This tool helps you check if your credits will transfer.")
+    print("Welcome, PHCC students! This tool helps you check if your")
+    print("Patrick & Henry Community College credits will transfer to other institutions.")
     print("\nYou can:")
-    print("  1. Check if your courses transfer to a target college")
+    print("  1. Check if your PHCC courses transfer to a target college")
     print("  2. Add new transfer equivalencies to the database")
     print("  3. View all available equivalencies")
     print("  4. Exit")
@@ -234,12 +396,21 @@ def interactive_mode():
         if choice == "1":
             # Check transfers
             print("\n--- Check Credit Transfers ---")
-            target_college = input("Enter target college/university: ").strip()
+            print("\nCommon transfer destinations:")
+            print("  - Virginia Tech")
+            print("  - University of Virginia")
+            print("  - James Madison University")
+            print("  - Radford University")
+            print("  - Virginia Commonwealth University")
+            print("  - Old Dominion University")
+            print("  - (or enter any other college/university)")
+            target_college = input("\nEnter target college/university: ").strip()
             
             courses = []
-            print("\nEnter your courses (press Enter with empty course code to finish):")
+            print(f"\nEnter your PHCC courses (press Enter with empty course code to finish):")
+            print("Note: Courses are assumed to be from Patrick & Henry Community College")
             while True:
-                course_code = input("\nCourse Code (or press Enter to finish): ").strip()
+                course_code = input("\nPHCC Course Code (e.g., ENG 111, MTH 173) or press Enter to finish: ").strip()
                 if not course_code:
                     break
                 
@@ -247,14 +418,14 @@ def interactive_mode():
                 course_name = input("  Course Name: ").strip()
                 credits = float(input("  Credits: ").strip())
                 grade = input("  Grade: ").strip().upper()
-                college = input("  College where taken: ").strip()
                 
+                # Auto-fill PHCC as the college
                 courses.append(Course(
                     course_code=course_code,
                     course_name=course_name,
                     credits=credits,
                     grade=grade,
-                    college=college
+                    college=phcc
                 ))
             
             if courses:
@@ -266,9 +437,10 @@ def interactive_mode():
         elif choice == "2":
             # Add equivalency
             print("\n--- Add Transfer Equivalency ---")
-            source_college = input("Source College: ").strip()
-            source_course = input("Source Course Code: ").strip()
-            target_college = input("Target College: ").strip()
+            print("Source college will be set to Patrick & Henry Community College")
+            source_college = phcc
+            source_course = input("PHCC Course Code (e.g., ENG 111): ").strip()
+            target_college = input("Target College/University: ").strip()
             target_course = input("Target Course Code: ").strip()
             target_course_name = input("Target Course Name: ").strip()
             credits = float(input("Credits Transferred: ").strip())
@@ -289,19 +461,30 @@ def interactive_mode():
         
         elif choice == "3":
             # View equivalencies
-            print("\n--- Available Transfer Equivalencies ---")
+            print("\n--- Available PHCC Transfer Equivalencies ---")
             if checker.equivalencies:
-                for i, eq in enumerate(checker.equivalencies, 1):
-                    print(f"\n{i}. {eq.source_college} - {eq.source_course_code}")
-                    print(f"   → {eq.target_college} - {eq.target_course_code} ({eq.target_course_name})")
-                    print(f"   Credits: {eq.credits_transferred}")
-                    if eq.notes:
-                        print(f"   Notes: {eq.notes}")
+                # Group by target college
+                by_college = {}
+                for eq in checker.equivalencies:
+                    if eq.target_college not in by_college:
+                        by_college[eq.target_college] = []
+                    by_college[eq.target_college].append(eq)
+                
+                for college, eqs in sorted(by_college.items()):
+                    print(f"\n{'='*70}")
+                    print(f"  {college}")
+                    print(f"{'='*70}")
+                    for eq in eqs:
+                        print(f"  PHCC {eq.source_course_code} → {eq.target_course_code} ({eq.target_course_name})")
+                        print(f"    Credits: {eq.credits_transferred}")
+                        if eq.notes:
+                            print(f"    Notes: {eq.notes}")
             else:
                 print("No equivalencies in database.")
         
         elif choice == "4":
-            print("\nThank you for using Credit Transfer Checker!")
+            print("\nThank you for using PHCC Credit Transfer Checker!")
+            print("Good luck with your transfer!")
             break
         
         else:

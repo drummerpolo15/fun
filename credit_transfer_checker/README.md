@@ -1,6 +1,6 @@
-# Credit Transfer Checker
+# PHCC Credit Transfer Checker
 
-A Python application that helps students check if their college credits will transfer to another institution.
+A Python application designed specifically for **Patrick & Henry Community College (PHCC)** students in Martinsville, VA to check if their credits will transfer to other colleges and universities.
 
 ## Features
 
@@ -38,7 +38,7 @@ python credit_transfer.py
 ```
 
 The interactive menu allows you to:
-1. **Check Credit Transfers**: Enter your courses and see if they transfer to your target college
+1. **Check Credit Transfers**: Enter your PHCC courses and see if they transfer to your target college
 2. **Add Transfer Equivalency**: Add new transfer mappings to the database
 3. **View Equivalencies**: See all available transfer equivalencies in the database
 4. **Exit**: Close the application
@@ -52,14 +52,14 @@ The interactive menu allows you to:
 
 2. Select option 1 to check transfers
 
-3. Enter your target college (e.g., "State University")
+3. Enter your target college (e.g., "Virginia Tech", "University of Virginia", "James Madison University")
 
-4. Enter your courses one by one:
-   - Course Code: MATH 101
-   - Course Name: Calculus I
+4. Enter your PHCC courses one by one:
+   - Course Code: ENG 111
+   - Course Name: College Composition I
    - Credits: 3
    - Grade: A
-   - College: Community College A
+   - (College is automatically set to Patrick & Henry Community College)
 
 5. View the results showing which courses transfer and how
 
@@ -69,9 +69,13 @@ Transfer equivalencies are stored in `transfer_equivalencies.json`. The file is 
 
 ### Sample Data Structure
 
-The application comes with sample transfer equivalencies including:
-- Community College A → State University
-- Community College B → State University
+The application comes with pre-loaded transfer equivalencies from PHCC to major Virginia universities including:
+- **Virginia Tech** - Engineering, sciences, and general education courses
+- **University of Virginia** - Core curriculum courses
+- **James Madison University** - General education and major prerequisites
+- **Radford University** - Transfer pathways
+- **Virginia Commonwealth University** - Various programs
+- **Old Dominion University** - Transfer agreements
 
 You can add your own equivalencies through the interactive menu.
 
@@ -88,9 +92,10 @@ credit_transfer_checker/
 ## Features in Detail
 
 ### Course Transfer Check
-- Enter multiple courses from your transcript
+- Enter multiple PHCC courses from your transcript
+- Courses are automatically associated with Patrick & Henry Community College
 - Check if each course has a transfer equivalency
-- See how courses map to the target college's course codes
+- See how PHCC courses map to the target college's course codes
 - View total transferable credits
 
 ### Adding Equivalencies
@@ -109,15 +114,28 @@ credit_transfer_checker/
 - Credits transferred
 - Optional notes
 
+## Common PHCC Transfer Destinations
+
+The database includes equivalencies for:
+- Virginia Tech (VT)
+- University of Virginia (UVA)
+- James Madison University (JMU)
+- Radford University
+- Virginia Commonwealth University (VCU)
+- Old Dominion University (ODU)
+
+More equivalencies can be added through the application interface.
+
 ## Future Enhancements
 
 Potential improvements:
 - Web interface
-- Integration with college databases
+- Integration with PHCC and Virginia college databases
 - GPA calculation for transfer credits
 - Export results to PDF
 - Search and filter capabilities
 - Support for multiple target colleges at once
+- Integration with Virginia's Transfer Virginia initiative
 
 ## License
 

@@ -1,0 +1,7 @@
+# Credit Transfer Checker Requirements
+# This project uses only Python standard library - no external dependencies required!
+
+# Python 3.7+ is recommended for dataclasses support
+# If using Python 3.6 or earlier, you can install dataclasses:
+# dataclasses==0.8; python_version<"3.7"
+

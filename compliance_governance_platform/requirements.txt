@@ -1,0 +1,30 @@
+# Compliance & Governance Automation Platform Requirements
+# Install with: pip install -r requirements.txt
+
+# Database
+sqlalchemy>=2.0.0
+# Note: sqlite3 is built-in with Python, no installation needed
+
+# Data processing and analysis
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Configuration and data handling
+python-dotenv>=1.0.0
+pyyaml>=6.0
+
+# Date/time handling
+python-dateutil>=2.8.0
+
+# Logging
+colorlog>=6.8.0
+
+# CLI interface
+click>=8.1.0
+
+# JSON schema validation (for questionnaires)
+jsonschema>=4.17.0
+
+# Email/notification support (optional)
+# python-ldap3  # For LDAP/Active Directory integration (optional)
+
